@@ -24,6 +24,16 @@ Person.prototype.calcAge = function () {
 
 jonas.calcAge();
 
+// Static Method
+
+Person.hey = function () {
+  console.log('Hey there 👋');
+};
+
+Person.hey();
+// jonas.hey();
+// jonas.hey would give an error because the hey method was not created on the prototype but rather on the constructor
+
 console.log(Person.prototype.isPrototypeOf(jonas));
 
 console.log(Person.prototype.isPrototypeOf(Person));
@@ -123,6 +133,8 @@ class PersonCl {
     this.birthYear = birthYear;
   }
 
+  //   Instances Method
+  //  Methods would be added to .prototype property
   calcAge() {
     console.log(2037 - this.birthYear);
   }
@@ -144,6 +156,11 @@ class PersonCl {
   get fullName() {
     return this, this._fullName;
   }
+
+  //   Static Methods
+  static hey() {
+    console.log('Hey there 👋');
+  }
 }
 
 // PersonCl.prototype.greet = function () {
@@ -160,7 +177,7 @@ console.log(jessica.age);
 // 2. Classes are first-class citizens i.e they can be passed to a function and can also be returned from a function
 // 3. Classes are executed in strict mode
 
-const walter = new PersonCl('walter', 1997);
+const walter = new PersonCl('walter williams', 1997);
 walter.greet();
 
 // Setter and Getter
