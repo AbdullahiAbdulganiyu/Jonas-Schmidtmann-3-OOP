@@ -96,28 +96,90 @@ mercedes.brake();
 // const PersonCl = class {}
 
 // class declaration
+// class PersonCl {
+//   constructor(firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   }
+
+//   // Methods
+
+//   calcAge() {
+//     console.log(2037 - this.birthYear);
+//   }
+
+//   greet() {
+//     console.log(`Hello ${this.firstName}`);
+//   }
+
+//   get age() {
+//     return 2037 - this.birthYear;
+//   }
+// }
+
 class PersonCl {
-  constructor(firstName, birthYear) {
-    this.firstName = firstName;
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
     this.birthYear = birthYear;
   }
-
-  // Methods
 
   calcAge() {
     console.log(2037 - this.birthYear);
   }
+
+  greet() {
+    console.log(`Hello ${this.fullName}`);
+  }
+
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  set fullName(name) {
+    console.log(name);
+    if (name.includes(' ')) return (this._fullName = name);
+    else alert(`${name} is not a valid name`);
+  }
+
+  get fullName() {
+    return this, this._fullName;
+  }
 }
 
-PersonCl.prototype.greet = function () {
-  console.log(`Hello ${this.firstName}`);
-};
+// PersonCl.prototype.greet = function () {
+//   console.log(`Hello ${this.firstName}`);
+// };
 
-const jessica = new PersonCl('Jessica', 1996);
+const jessica = new PersonCl('Jessica Davis', 1996);
 jessica.calcAge();
 jessica.greet();
+console.log(jessica.age);
 
 // Important things to note
 // 1.Classes are not hoisted, i.e they cannot be used before they are created
 // 2. Classes are first-class citizens i.e they can be passed to a function and can also be returned from a function
 // 3. Classes are executed in strict mode
+
+const walter = new PersonCl('walter', 1997);
+walter.greet();
+
+// Setter and Getter
+
+const account = {
+  owner: 'Jonas',
+  movement: [200, 500, 300, 800],
+
+  get latest() {
+    return this.movement.slice(-1).pop();
+  },
+
+  set latest(mov) {
+    return this.movement.push(mov);
+  },
+};
+
+console.log(account.latest);
+
+console.log((account.latest = 500));
+
+console.log(account.movement);
