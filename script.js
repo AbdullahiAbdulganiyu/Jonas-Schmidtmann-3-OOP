@@ -57,6 +57,8 @@ GOOD LUCK 😀
 
 // Solution
 
+// Remember that this is always assigned to the object that is created with the new operator on a construction function
+
 const Car = function (make, speed) {
   (this.make = make), (this.speed = speed);
 };
@@ -85,3 +87,37 @@ mercedes.brake();
 // }
 
 // printNumber();
+
+// ES6 classes
+
+// In ES6 a method can be created directly in the class decaleration or on directly on the prototype but it is not a good practice to do that when working with construction function
+
+// class expression
+// const PersonCl = class {}
+
+// class declaration
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  // Methods
+
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+}
+
+PersonCl.prototype.greet = function () {
+  console.log(`Hello ${this.firstName}`);
+};
+
+const jessica = new PersonCl('Jessica', 1996);
+jessica.calcAge();
+jessica.greet();
+
+// Important things to note
+// 1.Classes are not hoisted, i.e they cannot be used before they are created
+// 2. Classes are first-class citizens i.e they can be passed to a function and can also be returned from a function
+// 3. Classes are executed in strict mode
