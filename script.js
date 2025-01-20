@@ -489,3 +489,71 @@ jay.init('Jay', 2010, 'Computer Science');
 jay.introduce();
 jay.calcAge();
 */
+
+/////////////////////////////////////
+// Encapsulation: Private Class Fields and Methods
+
+// 1) Public Field
+// 2) Private Field
+// 3) Public Method
+// 4) Private Method
+// Static version of all the 4
+
+class Accounts {
+  // Pulic Fields
+  local = navigator.language;
+  bank = 'Bankist';
+
+  //   Private field
+  #movements = [];
+  #pin;
+
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this.#pin = pin;
+    // this.movements = [];
+    // this.local = navigator.language;
+
+    console.log(`Thanks for opening an account with us ${this.owner}`);
+  }
+
+  //   Public Interface(API)(Public Methods)
+
+  getMovements() {
+    return this.#movements;
+  }
+
+  deposit(val) {
+    this.#movements.push(val);
+    return this;
+  }
+
+  withdraw(val) {
+    this.deposit(-val);
+    return this;
+  }
+
+  //   Private Method
+  #approveLoan(val) {
+    return true;
+  }
+
+  requestLoan(val) {
+    if (this.#approveLoan(val)) {
+      this.deposit(val);
+      console.log('Loan approved');
+    }
+    return this;
+  }
+}
+
+const acc1 = new Accounts('Jonas', 'EUR', 1111);
+acc1.deposit(250);
+acc1.withdraw(140);
+acc1.requestLoan(10000);
+
+// Chaining
+acc1.withdraw(200).deposit(500).withdraw(400).requestLoan(1000);
+
+console.log(acc1);
