@@ -393,3 +393,67 @@ tesla.chargeBattery(90);
 tesla.accelerate();
 tesla.accelerate();
 */
+
+//////////////////////////////////////
+// Inheritance between classes: ES6 Classes
+/*
+
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  // Instance Methods
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.fullName}`);
+  }
+
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  set fullName(name) {
+    if (name.includes(' ')) return (this._fullName = name);
+    else alert(`${name} not a fullName`);
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+
+  //   Static Method
+  static hey() {
+    console.log('Hey there 👋');
+  }
+}
+
+class StudentCl extends PersonCl {
+  constructor(fullName, birthYear, course) {
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(`My name is ${this.fullName} and I study ${this.course}`);
+  }
+
+  calcAge() {
+    console.log(
+      `I am ${2037 - this.birthYear} old, but as a student I feel like I am ${
+        2037 - this.birthYear + 10
+      } old`
+    );
+  }
+}
+
+const matha = new StudentCl('Matha Jones', 2020, 'Computer Science');
+
+matha.introduce();
+matha.calcAge();
+
+*/
