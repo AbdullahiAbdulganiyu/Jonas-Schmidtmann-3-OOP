@@ -492,7 +492,7 @@ jay.calcAge();
 
 /////////////////////////////////////
 // Encapsulation: Private Class Fields and Methods
-
+/*
 // 1) Public Field
 // 2) Private Field
 // 3) Public Method
@@ -557,3 +557,5 @@ acc1.requestLoan(10000);
 acc1.withdraw(200).deposit(500).withdraw(400).requestLoan(1000);
 
 console.log(acc1);
+
+*/
