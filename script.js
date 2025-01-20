@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 // Constructor Function
 
 const Person = function (firstName, birthYear) {
@@ -49,6 +50,8 @@ console.log(jonas.hasOwnProperty('spieces'));
 
 const h1 = document.querySelector('h1');
 console.dir(h1);
+
+*/
 
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -101,6 +104,9 @@ mercedes.brake();
 
 // printNumber();
 
+/*
+
+////////////////////////////////////////////////
 // ES6 classes
 
 // In ES6 a method can be created directly in the class decaleration or on directly on the prototype but it is not a good practice to do that when working with construction function
@@ -183,6 +189,8 @@ console.log(jessica.age);
 const walter = new PersonCl('walter williams', 1997);
 walter.greet();
 
+
+//////////////////////////////////////////////////
 // Setter and Getter
 
 const account = {
@@ -203,6 +211,11 @@ console.log(account.latest);
 console.log((account.latest = 500));
 
 console.log(account.movement);
+
+*/
+
+/*
+///////////////////////////////////////
 
 // Object.create
 
@@ -228,6 +241,8 @@ const sarah = Object.create(PersonProto);
 sarah.init('Sarah', 2020);
 sarah.calcAge();
 
+*/
+
 ///////////////////////////////////////
 // Coding Challenge #2
 
@@ -242,6 +257,7 @@ DATA CAR 1: 'Ford' going at 120 km/h
 GOOD LUCK 😀
 */
 
+/*
 // Solution
 class Car2 {
   constructor(make, speed) {
@@ -278,3 +294,4 @@ ford.accelerate();
 
 console.log((ford.speedUS = 50));
 console.log(ford);
+*/
